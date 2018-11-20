@@ -1,12 +1,12 @@
 class Words {
 
   count(words) {
-    let lowerCaseWords = words.toLowerCase();
-    let wordsArray = lowerCaseWords.split(" ");
+    let lowerCaseWordsArray = words.replace( /\n/g, " " ).toLowerCase().split(" ");
     let countObject = {};
-    wordsArray.map(word => {
+
+    lowerCaseWordsArray.map(word => {
       if (word in countObject) {
-        countObject[word] = countObject[word] +1;
+        countObject[word] = countObject[word] + 1;
       } else {
         countObject[word] = 1;
       }
