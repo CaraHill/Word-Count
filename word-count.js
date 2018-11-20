@@ -1,10 +1,16 @@
 class Words {
+  prepareWords(words) {
+    let preparedWords = words
+      .replace(/\s\s+|\n|\t/g, " ")
+      .toLowerCase()
+      .split(" ");
+    return preparedWords;
+  }
 
   count(words) {
-    let lowerCaseWordsArray = words.replace( /\n/g, " " ).toLowerCase().split(" ");
     let countObject = {};
 
-    lowerCaseWordsArray.map(word => {
+    this.prepareWords(words).map(word => {
       if (word in countObject) {
         countObject[word] = countObject[word] + 1;
       } else {
