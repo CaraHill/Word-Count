@@ -1,7 +1,8 @@
 class Words {
 
   count(words) {
-    let wordsArray = words.split(" ");
+    let lowerCaseWords = words.toLowerCase();
+    let wordsArray = lowerCaseWords.split(" ");
     let countObject = {};
     wordsArray.map(word => {
       if (word in countObject) {
