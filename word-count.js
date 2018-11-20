@@ -1,10 +1,10 @@
 class Words {
   prepareWords(words) {
-    let preparedWords = words
-      .replace(/\s\s+|\n|\t/g, " ")
+    return words
+      .trim()
+      .replace(/\s+/g, " ")
       .toLowerCase()
       .split(" ");
-    return preparedWords;
   }
 
   count(words) {
@@ -17,6 +17,7 @@ class Words {
         countObject[word] = 1;
       }
     });
+
     return countObject;
   }
 }
