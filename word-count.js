@@ -8,7 +8,7 @@ class Words {
   }
 
   count(words) {
-    let countObject = {};
+    let countObject = Object.create(null);
 
     this.prepareWords(words).map(word => {
       if (word in countObject) {
